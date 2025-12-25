@@ -1,26 +1,23 @@
+{% extends 'base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Register</title>
+{% block title %}Register{% endblock %}
 
-    <link rel="stylesheet" href="{% static 'registration.css' %}">
-</head>
+{% block extra_head %}
+<link rel="stylesheet" href="{% static 'registration.css' %}">
+{% endblock %}
 
-<body>
+{% block content %}
 
 <div class="register-box">
 
-    <h1>Create Account</h1>
+    <h1>Create Your Account</h1>
 
     {% if form.errors %}
         <p class="error-message">Please fix the errors below</p>
     {% endif %}
 
-    <form method="POST">
+    <form method="POST" action="{% url 'register' %}">
         {% csrf_token %}
         {{ form.as_p }}
 
@@ -28,10 +25,10 @@
     </form>
 
     <p class="login-link">
-        Already have an account? <a href="{% url 'login' %}">Login here</a>
+        Already have an account?
+        <a href="{% url 'login' %}">Login here</a>
     </p>
 
 </div>
 
-</body>
-</html>
+{% endblock %}

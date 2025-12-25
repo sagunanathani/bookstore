@@ -19,12 +19,14 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
+from sales.views import home
 
 from sales.views import login_view, logout_view, register_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('sales.urls')),
+    path('', home, name='home'),
+    path('sales/', include('sales.urls', namespace='sales')),
     path('books/', include('books.urls')),
     path('login/', login_view, name='login'),
     path('logout/', logout_view, name='logout'),

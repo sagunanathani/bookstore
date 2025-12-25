@@ -118,7 +118,7 @@ def login_view(request):
 #define a function view called logout_view that takes a request from user
 def logout_view(request):                                  
    logout(request)          #the use pre-defined Django function to logout
-   return redirect('sales:login') #after logging out go to login form (or whichever page you want)
+   return redirect('login') #after logging out go to login form (or whichever page you want)
 
 #define a function view called register_view that takes a request from user
 def register_view(request):

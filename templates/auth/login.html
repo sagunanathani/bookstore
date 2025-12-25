@@ -1,33 +1,28 @@
+{% extends 'base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Login</title>
+{% block title %}Login{% endblock %}
 
-    <!-- Link your login.css file -->
-    <link rel="stylesheet" href="{% static 'login.css' %}">
-</head>
+{% block extra_head %}
+<link rel="stylesheet" href="{% static 'login.css' %}">
+{% endblock %}
 
-<body>
+{% block content %}
 
 <div class="login-box">
 
-    <h1>Login</h1>
+    <h1>Login to Your Account</h1>
 
     {% if error_message %}
         <p class="error-message">{{ error_message }}</p>
     {% endif %}
 
-    <form action="" method="POST">
+    <form action="{% url 'login' %}" method="POST">
         {% csrf_token %}
         {{ form }}
         <button type="submit">Login</button>
     </form>
 
-    <!-- Add this section -->
     <p class="register-link">
         Don’t have an account?
         <a href="{% url 'register' %}">Register here</a>
@@ -35,5 +30,4 @@
 
 </div>
 
-</body>
-</html>
+{% endblock %}

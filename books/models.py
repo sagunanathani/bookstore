@@ -24,7 +24,7 @@ class Book(models.Model):
     genre = models.CharField(max_length=12, choices=genre_choices, default='classic')
     book_type = models.CharField(max_length=12, choices=book_type_choices, default='hardcover')
     notes = models.TextField(default="no notes...")
-    pic = models.ImageField(upload_to='books', blank=True, null=True)
+    pic = models.ImageField(upload_to='books/images', blank=True, null=True)
 
     def __str__(self):
         return str(self.name)

@@ -1,18 +1,21 @@
-/* FULL PAGE CENTERING */
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f6f7;
     margin: 0;
     padding: 0;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
 }
 
-/* LOGIN CONTAINER */
+/* Make container fill the page */
+.container {
+    min-height: calc(100vh - 80px);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+/* LOGIN BOX */
 .login-box {
+    margin-top: 60px;
     background: #ffffff;
     width: 380px;
     padding: 35px 40px;
