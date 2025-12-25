@@ -22,7 +22,11 @@
     <tr class="clickable-row" onclick="window.location='{% url 'books:detail' book.pk %}'">
         <td>{{ book.name }}</td>
         <td>
-            <img src="{{ book.pic.url }}" width="150" height="200" alt="{{ book.name }}">
+            {% if book.pic %}
+                <img src="{{ book.pic.url }}" width="150" height="200" alt="{{ book.name }}">
+            {% else %}
+                <p>No image available</p>
+            {% endif %}
         </td>
     </tr>
     {% endfor %}
