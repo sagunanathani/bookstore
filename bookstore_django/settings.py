@@ -17,9 +17,18 @@ import cloudinary
 import cloudinary.uploader
 import cloudinary.api
 
+CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = True
+
+CSRF_COOKIE_SAMESITE = 'None'
+SESSION_COOKIE_SAMESITE = 'None'
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://bookstoredjango.up.railway.app",
+]
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
@@ -30,8 +39,11 @@ SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get("DEBUG") == "True"
 
-ALLOWED_HOSTS = ['.railway.app', 'localhost', '127.0.0.1']
-
+ALLOWED_HOSTS = [
+    "bookstoredjango.up.railway.app",
+    "127.0.0.1",
+    "localhost",
+]
 # Application definition
 
 INSTALLED_APPS = [

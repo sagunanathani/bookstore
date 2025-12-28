@@ -48,6 +48,8 @@ This project includes login, registration, CRUD operations, data visualization, 
     python manage.py migrate
 
 5. Start the development server
+    1. go to cmd - windows+r - cd "C:\Users\Saguna Nathani\Desktop\CF_Projects\bookstore_django"
+    2. "C:\Users\Saguna Nathani\Envs\achievement2-practice\Scripts\activate.bat" - active 
     (achievement2-practice) C:\Users\Saguna Nathani\Desktop\CF_Projects\bookstore_django>
     python manage.py runserver
 
